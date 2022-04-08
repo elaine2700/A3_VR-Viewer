@@ -9,21 +9,30 @@ public class Views : MonoBehaviour
     [SerializeField] GameObject bikeStandardView;
     [SerializeField] GameObject bikeExplodedView;
 
+    public bool explodedViewActive;
+
     private void Awake()
     {
         toggleReference.action.started += ToggleView;
+        explodedViewActive = true;
     }
 
     void Start()
     {
-        bikeStandardView.SetActive(true);
-        bikeExplodedView.SetActive(!bikeStandardView.activeSelf);
+        Toggle();
     }
 
     void ToggleView(InputAction.CallbackContext context)
     {
-        bikeStandardView.SetActive(!bikeStandardView.activeSelf);
-        bikeExplodedView.SetActive(!bikeStandardView.activeSelf);
+        Toggle();
+    }
+
+    // Called by UI button
+    public void Toggle()
+    {
+        explodedViewActive = !explodedViewActive;
+        bikeStandardView.SetActive(!explodedViewActive);
+        bikeExplodedView.SetActive(explodedViewActive);
     }
 
 }
