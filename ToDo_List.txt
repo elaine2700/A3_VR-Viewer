@@ -1,21 +1,42 @@
 Standard view:
 
 [] Toggle between standard view to exploded view
+	Press Controller Button - A
+	UI Button
 
 Exploded view:
 
 [] Display the names of all objects
 	[] Available only in exploded view
 	[] without needing to manually highlight each of them
+	UI Button
+	Press Controller Button - ()
+
+
+[] Highlight individual components
+	[] database - name and description
+	[] reveal component's name
+	[] Show short component's description
 
 In both views:
 
 [] Move Bike 
 [] Scale bike 
 [] Rotate bike 
-[] Highlight individual components
-	[] database - name and description
-	[] reveal component's name
-	[] Show short component's description
+
 [] Capture screenshot
 [] Save screenshot file
+
+UI
+-UI Buttons
+
+
+If time...
+Texture Bike
+Reset scale
+change light settings when highlighting something
+Toggle each component’s visibility individually.
+
+Lower Priority
+Allow users to modify the object in some way. 
+Change the colour of individual parts...
