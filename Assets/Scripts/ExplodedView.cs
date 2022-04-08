@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShowNames : MonoBehaviour
+public class ExplodedView : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -10,9 +10,9 @@ public class ShowNames : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+    void ShowAllNames()
     {
-        
+
     }
+
 }

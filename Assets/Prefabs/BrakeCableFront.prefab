@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1517152959292245359}
   - component: {fileID: 6547028850401755629}
   - component: {fileID: 3641131689266401330}
+  - component: {fileID: 6367441630112358225}
   m_Layer: 0
   m_Name: BrakeCableFront
   m_TagString: Untagged
@@ -81,3 +82,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6367441630112358225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2007231166504508707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c434b366679c354ea5419d1a4966a8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Brake Cable (Front)
+  description: A metal cable enclosed in part by a metal and plastic housing that
+    is used to connect a control a brake to the device, it activates.
