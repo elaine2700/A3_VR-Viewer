@@ -1,0 +1,21 @@
+Standard view:
+
+[] Move Bike 
+[] Scale bike 
+[] Rotate bike 
+[] Highlight individual components
+	[] database - name and description
+	[] reveal component's name
+	[] Show short component's description
+[] Toggle between standard view to exploded view
+
+Exploded view:
+
+[] Display the names of all objects
+	[] Available only in exploded view
+	[] without needing to manually highlight each of them
+
+In both views:
+
+[] Capture screenshot
+[] Save screenshot file
