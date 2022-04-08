@@ -1,12 +1,5 @@
 Standard view:
 
-[] Move Bike 
-[] Scale bike 
-[] Rotate bike 
-[] Highlight individual components
-	[] database - name and description
-	[] reveal component's name
-	[] Show short component's description
 [] Toggle between standard view to exploded view
 
 Exploded view:
@@ -17,5 +10,12 @@ Exploded view:
 
 In both views:
 
+[] Move Bike 
+[] Scale bike 
+[] Rotate bike 
+[] Highlight individual components
+	[] database - name and description
+	[] reveal component's name
+	[] Show short component's description
 [] Capture screenshot
 [] Save screenshot file
