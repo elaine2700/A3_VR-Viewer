@@ -1073,6 +1073,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Custom",
+            "id": "c7979519-789b-4b4f-aee6-05fa12b7a970",
+            "actions": [
+                {
+                    "name": "Toggle",
+                    "type": "Button",
+                    "id": "4534734b-24ae-426b-a66f-cbafb91eed86",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "37043ddf-8091-4d87-9b39-10c7486421a2",
+                    "path": "<XRController>{RightHand}/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Toggle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

@@ -1,13 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Views : MonoBehaviour
 {
-    
+    [SerializeField] InputActionReference toggleReference;
     [SerializeField] GameObject bikeStandardView;
     [SerializeField] GameObject bikeExplodedView;
 
+    private void Awake()
+    {
+        toggleReference.action.started += ToggleView;
+    }
 
     void Start()
     {
@@ -15,15 +20,10 @@ public class Views : MonoBehaviour
         bikeExplodedView.SetActive(!bikeStandardView.activeSelf);
     }
 
-    void Update()
+    void ToggleView(InputAction.CallbackContext context)
     {
-        if (true)
-        {
-            // Input System
-            // Toggle between views (Set active/inactive prefabs)
-            bikeStandardView.SetActive(!bikeStandardView.activeSelf);
-            bikeExplodedView.SetActive(!bikeStandardView.activeSelf);
-        }
-
+        bikeStandardView.SetActive(!bikeStandardView.activeSelf);
+        bikeExplodedView.SetActive(!bikeStandardView.activeSelf);
     }
+
 }
