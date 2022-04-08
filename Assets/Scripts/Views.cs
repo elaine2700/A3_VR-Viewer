@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Views : MonoBehaviour
 {
+    
     [SerializeField] GameObject bikeStandardView;
     [SerializeField] GameObject bikeExplodedView;
 
@@ -16,8 +17,9 @@ public class Views : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (true)
         {
+            // Input System
             // Toggle between views (Set active/inactive prefabs)
             bikeStandardView.SetActive(!bikeStandardView.activeSelf);
             bikeExplodedView.SetActive(!bikeStandardView.activeSelf);
