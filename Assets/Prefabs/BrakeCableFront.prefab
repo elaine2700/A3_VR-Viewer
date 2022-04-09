@@ -186,12 +186,9 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  partName: 
+  partName: Brake Cable
   description: A metal cable enclosed in part by a metal and plastic housing that
     is used to connect a control a brake to the device, it activates.
-  infoCanvas: {fileID: 0}
-  nameField: {fileID: 0}
-  descriptionField: {fileID: 0}
 --- !u!64 &1561711450828019998
 MeshCollider:
   m_ObjectHideFlags: 0
