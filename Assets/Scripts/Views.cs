@@ -12,8 +12,6 @@ public class Views : MonoBehaviour
 
     public bool explodedViewActive;
 
-    ExplodedView explodedView;
-
     private void Awake()
     {
         toggleReference.action.started += ToggleView;
