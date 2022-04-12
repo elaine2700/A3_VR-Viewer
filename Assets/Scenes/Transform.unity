@@ -626,7 +626,6 @@ GameObject:
   - component: {fileID: 463684840}
   - component: {fileID: 463684839}
   - component: {fileID: 463684838}
-  - component: {fileID: 463684837}
   m_Layer: 0
   m_Name: Cube4
   m_TagString: Untagged
@@ -642,25 +641,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 463684835}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.22, y: 0.46152633, z: -1.44}
+  m_LocalPosition: {x: 2.89, y: 0.46152633, z: -1.44}
   m_LocalScale: {x: 0.92305267, y: 0.92305267, z: 0.92305267}
   m_Children: []
   m_Father: {fileID: 1281416685}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &463684837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 463684835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d969e246ae8d6c4f8bcfdf1db98fee0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
 --- !u!65 &463684838
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1292,7 +1278,6 @@ GameObject:
   - component: {fileID: 1221423764}
   - component: {fileID: 1221423763}
   - component: {fileID: 1221423762}
-  - component: {fileID: 1221423761}
   m_Layer: 0
   m_Name: Cube4 (1)
   m_TagString: Untagged
@@ -1308,25 +1293,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1221423759}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.22, y: 0.46152633, z: 1.54}
+  m_LocalPosition: {x: 2.890001, y: 0.46152633, z: 1.54}
   m_LocalScale: {x: 0.92305267, y: 0.92305267, z: 0.92305267}
   m_Children: []
   m_Father: {fileID: 1281416685}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1221423761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1221423759}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d969e246ae8d6c4f8bcfdf1db98fee0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
 --- !u!65 &1221423762
 BoxCollider:
   m_ObjectHideFlags: 0
