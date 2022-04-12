@@ -30,7 +30,8 @@ Transform:
   m_LocalRotation: {x: 0.00000008146034, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.02571289, y: 0.46519804, z: 3.41465}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 7099417361169625206}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -199,7 +200,113 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   partName: Wheel (Front)
-  description: '**********'
-  infoCanvas: {fileID: 0}
+  description: Road bike tires are thinner and have less tread than mountain bike
+    tires. They are typically 700cm in diameter and are designed for riding on asphalt
+    and cement.
   nameField: {fileID: 0}
-  descriptionField: {fileID: 0}
+--- !u!1001 &8242714932669547403
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 335189768099961591}
+    m_Modifications:
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5241912321867605057, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_Name
+      value: BikePart Name
+      objectReference: {fileID: 0}
+    - target: {fileID: 5241912321867605057, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+--- !u!224 &7099417361169625206 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+  m_PrefabInstance: {fileID: 8242714932669547403}
+  m_PrefabAsset: {fileID: 0}

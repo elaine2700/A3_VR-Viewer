@@ -30,7 +30,8 @@ Transform:
   m_LocalRotation: {x: -0.003614813, y: 0.82846767, z: 0.5600199, w: 0.0024439946}
   m_LocalPosition: {x: 0.03819823, y: 4.6713037, z: 1.5547053}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1359849081413719782}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -199,7 +200,123 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   partName: Stem
-  description: '*************'
-  infoCanvas: {fileID: 0}
-  nameField: {fileID: 0}
-  descriptionField: {fileID: 0}
+  description: Connects the steering tube (on top of the fork) to the handlebar.
+    A regular bike stem clamps onto the steering tube.
+  nameField: {fileID: 7396964291458637829}
+--- !u!1001 &161307693516875035
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2007795680092789010}
+    m_Modifications:
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5907737
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.38856998
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5907737
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.38856968
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 66.668
+      objectReference: {fileID: 0}
+    - target: {fileID: 5241912321867605057, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_Name
+      value: BikePart Name
+      objectReference: {fileID: 0}
+    - target: {fileID: 5241912321867605057, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+--- !u!224 &1359849081413719782 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1216591985265226749, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+  m_PrefabInstance: {fileID: 161307693516875035}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7396964291458637829 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7249211738438518046, guid: 1ebf6c9f6cf2043f8982aec293923ca7, type: 3}
+  m_PrefabInstance: {fileID: 161307693516875035}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
