@@ -8,8 +8,11 @@ public class Views : MonoBehaviour
     [SerializeField] InputActionReference toggleReference;
     [SerializeField] GameObject bikeStandardView;
     [SerializeField] GameObject bikeExplodedView;
+    [SerializeField] GameObject nameDescriptionCanvas;
 
     public bool explodedViewActive;
+
+    ExplodedView explodedView;
 
     private void Awake()
     {
@@ -20,6 +23,7 @@ public class Views : MonoBehaviour
     void Start()
     {
         Toggle();
+        nameDescriptionCanvas.SetActive(false);
     }
 
     void ToggleView(InputAction.CallbackContext context)

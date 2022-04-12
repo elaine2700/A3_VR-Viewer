@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7650071102063680857}
   - component: {fileID: 7016981564480079842}
-  - component: {fileID: 3952803868260414442}
   m_Layer: 0
   m_Name: Bike_Exploded
   m_TagString: Untagged
@@ -69,18 +68,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3, y: 7, z: 13}
   m_Center: {x: 0, y: 1.5, z: -0.5}
---- !u!114 &3952803868260414442
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7016981564480079843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e607af6d7cc4b3847afed318279ba993, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &73347327180971126
 PrefabInstance:
   m_ObjectHideFlags: 0
