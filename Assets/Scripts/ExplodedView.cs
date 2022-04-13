@@ -15,18 +15,19 @@ public class ExplodedView : MonoBehaviour
     [SerializeField] InputActionReference toggleNamesReference;
 
 
-    public List<TextMeshPro> bikePartSigns = new List<TextMeshPro>();
+    public List<BikePart> bikePartSigns = new List<BikePart>();
     Views views;
     bool showNames;
 
     private void Awake()
     {
         toggleNamesReference.action.started += ShowNamesWithButton;
+        views = GetComponent<Views>();
+        
     }
 
     private void Start()
     {
-        views = GetComponent<Views>();
         FindNames();
         showNames = false;
     }
@@ -34,20 +35,18 @@ public class ExplodedView : MonoBehaviour
     void FindNames()
     {
         BikePart[] parts = FindObjectsOfType<BikePart>();
+        //Debug.Log(parts.Length);
         foreach(BikePart part in parts)
         {
-            TextMeshPro namePart = part.gameObject.GetComponentInChildren<TextMeshPro>();
-            if(namePart != null)
-            {
-                bikePartSigns.Add(namePart);
-            }
+            bikePartSigns.Add(part);
         }
     }
 
     void ShowNamesWithButton(InputAction.CallbackContext context)
     {
-        ShowAllNames();
         toggleNames.isOn = !toggleNames.isOn;
+        ShowAllNames();
+        
     }
 
     public void ShowAllNames()
@@ -57,9 +56,11 @@ public class ExplodedView : MonoBehaviour
             views.Toggle();
         }
         showNames = toggleNames.isOn;
-        foreach(TextMeshPro nameText in bikePartSigns)
+        foreach(BikePart bikePart in bikePartSigns)
         {
-            nameText.gameObject.SetActive(showNames);
+            bikePart.ShowName(showNames);
         }
     }
+
+
 }

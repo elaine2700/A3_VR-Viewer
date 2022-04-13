@@ -991,7 +991,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 45480661182cc254492c17fc56d68326, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1054,10 +1054,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 1518198056}
     m_Modifications:
     - target: {fileID: 1389038323161428050, guid: 9a9073a9a449051468f1c779dc5de628, type: 3}
-      propertyPath: nameField
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1389038323161428050, guid: 9a9073a9a449051468f1c779dc5de628, type: 3}
       propertyPath: infoCanvas
       value: 
       objectReference: {fileID: 1995163025}
@@ -1069,6 +1065,10 @@ PrefabInstance:
       propertyPath: descriptionField
       value: 
       objectReference: {fileID: 844733909}
+    - target: {fileID: 1856123163092830849, guid: 9a9073a9a449051468f1c779dc5de628, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2954713167058288928, guid: 9a9073a9a449051468f1c779dc5de628, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1125,6 +1125,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e2064ca1ea5514d5baa3331130c2429c, type: 2}
+    - target: {fileID: 5706628828306156529, guid: 9a9073a9a449051468f1c779dc5de628, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7016981564480079843, guid: 9a9073a9a449051468f1c779dc5de628, type: 3}
       propertyPath: m_Name
       value: Bike_Exploded
@@ -1163,7 +1167,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7650071102063680857, guid: 9a9073a9a449051468f1c779dc5de628, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7650071102063680857, guid: 9a9073a9a449051468f1c779dc5de628, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1302,8 +1306,8 @@ Transform:
   m_LocalPosition: {x: 1.39, y: 1.007, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 678531803798685462}
   - {fileID: 856220695}
+  - {fileID: 678531803798685462}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -2520,7 +2524,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7650071102063680857, guid: 09749036b42e81a47b9c712f309ab038, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7650071102063680857, guid: 09749036b42e81a47b9c712f309ab038, type: 3}
       propertyPath: m_LocalPosition.x

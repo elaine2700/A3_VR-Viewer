@@ -13,8 +13,11 @@ public class BikePart : XRBaseInteractable
     MeshRenderer meshRenderer;
     Views views;
 
+    bool allowHovering = false;
+
     private void Start()
     {
+        
         meshRenderer = GetComponent<MeshRenderer>();
         views = FindObjectOfType<Views>();
         explodedView = FindObjectOfType<ExplodedView>();
@@ -29,7 +32,7 @@ public class BikePart : XRBaseInteractable
             HighlightPart();
             explodedView.NameField.text = partName;
             explodedView.DescriptionField.text = description;
-            nameField.gameObject.SetActive(true);
+            ShowName(true);
             explodedView.InfoCanvas.SetActive(true);
             Debug.Log(partName);
             Debug.Log(description);
@@ -42,7 +45,7 @@ public class BikePart : XRBaseInteractable
         {
             UnhighlightPart();
             explodedView.InfoCanvas.SetActive(false);
-            nameField.gameObject.SetActive(false);
+            ShowName(false);
         }    
     }
 
@@ -55,5 +58,21 @@ public class BikePart : XRBaseInteractable
     {
         meshRenderer.material.color = Color.white;
     }
+
+    public void ShowName(bool show)
+    {
+        if (views.explodedViewActive)
+        {
+            allowHovering = show;
+            nameField.gameObject.SetActive(show);
+        }
+    }
+
+    protected override void OnHoverExited(HoverExitEventArgs args)
+    {
+        if(enabled)
+        base.OnHoverExited(args);
+    }
+
 
 }
