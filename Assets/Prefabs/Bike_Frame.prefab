@@ -107,12 +107,6 @@ MonoBehaviour:
   m_CustomReticle: {fileID: 0}
   m_FirstHoverEntered:
     m_PersistentCalls:
-      m_Calls: []
-  m_LastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverEntered:
-    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 468597839276065135}
         m_TargetAssemblyTypeName: BikePart, Assembly-CSharp
@@ -126,7 +120,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_HoverExited:
+  m_LastHoverExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 468597839276065135}
@@ -141,6 +135,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
   m_FirstSelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -190,6 +190,7 @@ MonoBehaviour:
   description: The tubing (usually metal or carbon) to which every other bike part
     is attached to.
   nameField: {fileID: 2315144054963493603}
+  showAllNames: 0
 --- !u!64 &4709492809908066772
 MeshCollider:
   m_ObjectHideFlags: 0

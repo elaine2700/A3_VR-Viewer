@@ -56,9 +56,14 @@ public class ExplodedView : MonoBehaviour
             views.Toggle();
         }
         showNames = toggleNames.isOn;
+        //Debug.Log(showNames);
         foreach(BikePart bikePart in bikePartSigns)
         {
-            bikePart.ShowName(showNames);
+            bikePart.SetShowName(showNames);
+            //Debug.Log("hello");
+            
+            //bikePart.showName = showNames;
+            //bikePart.ShowName(showNames);
         }
     }
 
