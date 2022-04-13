@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -12,18 +11,17 @@ public class ExplodedView : MonoBehaviour
     public TextMeshProUGUI DescriptionField;
 
     public Toggle toggleNames;
-    [SerializeField] InputActionReference toggleNamesReference;
+    [SerializeField] InputActionReference displayNamesReference;
 
-
-    public List<BikePart> bikePartSigns = new List<BikePart>();
+    
+    public List<Names> bikePartSigns = new List<Names>();
     Views views;
     bool showNames;
 
     private void Awake()
     {
-        toggleNamesReference.action.started += ShowNamesWithButton;
+        displayNamesReference.action.started += ShowNamesWithButton;
         views = GetComponent<Views>();
-        
     }
 
     private void Start()
@@ -34,9 +32,9 @@ public class ExplodedView : MonoBehaviour
 
     void FindNames()
     {
-        BikePart[] parts = FindObjectsOfType<BikePart>();
-        //Debug.Log(parts.Length);
-        foreach(BikePart part in parts)
+        Names[] parts = FindObjectsOfType<Names>();
+        Debug.Log(parts.Length);
+        foreach(Names part in parts)
         {
             bikePartSigns.Add(part);
         }
@@ -56,16 +54,16 @@ public class ExplodedView : MonoBehaviour
             views.Toggle();
         }
         showNames = toggleNames.isOn;
-        //Debug.Log(showNames);
-        foreach(BikePart bikePart in bikePartSigns)
+        if (views.explodedViewActive)
         {
-            bikePart.SetShowName(showNames);
-            //Debug.Log("hello");
-            
-            //bikePart.showName = showNames;
-            //bikePart.ShowName(showNames);
+            foreach (Names bikePart in bikePartSigns)
+            {
+                bikePart.DisplayName(showNames);
+            }
         }
     }
+
+
 
 
 }

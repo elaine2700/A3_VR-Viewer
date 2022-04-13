@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1216591985265226749}
   - component: {fileID: 5640287495182007666}
   - component: {fileID: 7249211738438518046}
+  - component: {fileID: 3853343327402002138}
   m_Layer: 0
   m_Name: BikePart Name
   m_TagString: Untagged
@@ -170,3 +171,16 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+--- !u!114 &3853343327402002138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5241912321867605057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9e403a6c2bf847a5892ffe257a5c820, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameField: {fileID: 0}

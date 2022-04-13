@@ -1,20 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
 public class Names : MonoBehaviour
 {
-    [SerializeField] TextMeshPro nameField;
+    TextMeshPro nameField;
     BikePart bikePart;
 
     private void Start()
     {
-        //bikePart
+        nameField = GetComponent<TextMeshPro>();
+        DisplayName(false);
     }
 
-    public void ShowName()
+    public void DisplayName(bool show)
     {
-
+        Debug.Log(show);
+        nameField.enabled = show;
     }
 }

@@ -4,24 +4,36 @@ using TMPro;
 
 public class BikePart : XRBaseInteractable
 {
+    
+    [SerializeField] Transform explodedTransform;
     [SerializeField] string partName;
     [TextArea]
     [SerializeField] string description;
-    [SerializeField] TextMeshPro nameField;
+    [SerializeField] Names nameField;
 
     ExplodedView explodedView;
     MeshRenderer meshRenderer;
     Views views;
+    TextMeshPro nameDisplay;
+    Transform initialTransform;
 
-    [SerializeField] bool showName;
+    bool showName = true;
+
+    Vector3 initialPos;
+    Vector3 explodedPos;
 
     private void Start()
     {
+        initialTransform = transform;
+        initialPos = transform.position;
+        initialTransform.TransformPoint(initialPos);
+        explodedTransform.TransformPoint(explodedPos);
         meshRenderer = GetComponent<MeshRenderer>();
         views = FindObjectOfType<Views>();
+        nameDisplay = nameField.GetComponent<TextMeshPro>();
         explodedView = FindObjectOfType<ExplodedView>();
-        nameField.text = partName;
-        nameField.gameObject.SetActive(false);
+        nameDisplay.text = partName;
+        
     }
 
     public void DisplayInfo()
@@ -33,8 +45,6 @@ public class BikePart : XRBaseInteractable
             explodedView.DescriptionField.text = description;
             ShowName(true);
             explodedView.InfoCanvas.SetActive(true);
-            Debug.Log(partName);
-            Debug.Log(description);
         }
     }
 
@@ -44,6 +54,7 @@ public class BikePart : XRBaseInteractable
         {
             UnhighlightPart();
             explodedView.InfoCanvas.SetActive(false);
+            
             ShowName(showName);
         }    
     }
@@ -62,17 +73,36 @@ public class BikePart : XRBaseInteractable
     {
         if (views.explodedViewActive)
         {
-            nameField.gameObject.SetActive(show);
+            nameField.DisplayName(show);
         }
     }
 
     public void SetShowName(bool show)
     {
         showName = show;
-        Debug.Log(showName);
     }
 
-    
-    
+    public Transform GetInitialPosition()
+    {
+        return initialTransform;
+    }
+
+    public Transform GetExplodedPos()
+    {
+        return explodedTransform;
+    }
+
+    public void TogglePos(bool explodedView)
+    {
+        if(explodedView)
+        {
+            transform.position = explodedTransform.position;
+        }
+        else
+        {
+
+            transform.position = initialPos;
+        }
+    }
 
 }

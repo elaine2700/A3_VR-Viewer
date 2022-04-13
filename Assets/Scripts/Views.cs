@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -6,11 +5,10 @@ using UnityEngine.InputSystem;
 public class Views : MonoBehaviour
 {
     [SerializeField] InputActionReference toggleReference;
-    [SerializeField] GameObject bikeStandardView;
-    [SerializeField] GameObject bikeExplodedView;
     [SerializeField] GameObject nameDescriptionCanvas;
 
     public bool explodedViewActive;
+    public List<BikePart> bikeParts = new List<BikePart>();
 
     private void Awake()
     {
@@ -20,6 +18,11 @@ public class Views : MonoBehaviour
 
     void Start()
     {
+        BikePart[] bikeComps = FindObjectsOfType<BikePart>();
+        foreach (BikePart bikePart in bikeComps)
+        {
+            bikeParts.Add(bikePart);
+        }
         Toggle();
         nameDescriptionCanvas.SetActive(false);
     }
@@ -33,8 +36,27 @@ public class Views : MonoBehaviour
     public void Toggle()
     {
         explodedViewActive = !explodedViewActive;
-        bikeStandardView.SetActive(!explodedViewActive);
-        bikeExplodedView.SetActive(explodedViewActive);
+        TogglePos();
+    }
+
+    void TogglePos()
+    {
+        foreach(BikePart bikePart in bikeParts)
+        {
+            bikePart.TogglePos(explodedViewActive);
+            /*Vector3 newPos = Vector3.zero;
+            if (explodedViewActive)
+            {
+                newPos = bikePart.GetExplodedPos().position;
+            }
+            else
+            {
+                newPos = bikePart.GetInitialPosition().position;
+            }
+            Debug.Log(newPos);
+            bikePart.transform.position = newPos;
+            */
+        }
     }
 
 }
