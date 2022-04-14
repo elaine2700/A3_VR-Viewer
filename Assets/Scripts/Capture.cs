@@ -23,7 +23,7 @@ public class Capture : MonoBehaviour
     void CaptureScreenShot(InputAction.CallbackContext context)
     {
         string nameCapture = $"Capture{numCapture}";
-        ScreenCapture.CaptureScreenshot(nameCapture, ScreenCapture.StereoScreenCaptureMode.BothEyes);
+        ScreenCapture.CaptureScreenshot(nameCapture, ScreenCapture.StereoScreenCaptureMode.LeftEye);
         meshRenderer.enabled = true;
         numCapture++;
         Invoke(nameof(HideText), 2f);

@@ -26,6 +26,7 @@ public class BikePart : XRBaseInteractable
         initialPos = transform.position;
         initialTransform.TransformPoint(initialPos);
         explodedTransform.TransformPoint(explodedPos);
+        explodedTransform.gameObject.SetActive(false);
         meshRenderer = GetComponent<MeshRenderer>();
         views = FindObjectOfType<Views>();
         nameDisplay = nameField.GetComponent<TextMeshPro>();

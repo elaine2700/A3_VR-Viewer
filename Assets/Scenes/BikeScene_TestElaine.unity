@@ -2020,7 +2020,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8946794045208453663, guid: 81bc55d23672e44fb878ab65dd817cf1, type: 3}
       propertyPath: m_IsOn
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8946794045208453663, guid: 81bc55d23672e44fb878ab65dd817cf1, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2454,6 +2454,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1615695047331458753, guid: 4e5aeae4e0ddd434dbc237ea7e7564a1, type: 3}
       propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210184264126919569, guid: 4e5aeae4e0ddd434dbc237ea7e7564a1, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8299123386580055760, guid: 4e5aeae4e0ddd434dbc237ea7e7564a1, type: 3}
