@@ -12,11 +12,9 @@ public class ExplodedView : MonoBehaviour
 
     public Toggle toggleNames;
     [SerializeField] InputActionReference displayNamesReference;
-
     
     public List<Names> bikePartSigns = new List<Names>();
     Views views;
-    bool showNames;
 
     private void Awake()
     {
@@ -27,24 +25,22 @@ public class ExplodedView : MonoBehaviour
     private void Start()
     {
         FindNames();
-        showNames = false;
     }
 
     void FindNames()
     {
         Names[] parts = FindObjectsOfType<Names>();
-        Debug.Log(parts.Length);
         foreach(Names part in parts)
         {
             bikePartSigns.Add(part);
         }
     }
 
+    // Starts with input (Y button).
     void ShowNamesWithButton(InputAction.CallbackContext context)
     {
         toggleNames.isOn = !toggleNames.isOn;
         ShowAllNames();
-        
     }
 
     public void ShowAllNames()
@@ -53,12 +49,11 @@ public class ExplodedView : MonoBehaviour
         {
             views.Toggle();
         }
-        showNames = toggleNames.isOn;
         if (views.explodedViewActive)
         {
             foreach (Names bikePart in bikePartSigns)
             {
-                bikePart.DisplayName(showNames);
+                bikePart.DisplayName(toggleNames.isOn);
             }
         }
     }

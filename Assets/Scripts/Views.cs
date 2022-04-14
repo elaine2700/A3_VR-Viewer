@@ -27,6 +27,7 @@ public class Views : MonoBehaviour
         nameDescriptionCanvas.SetActive(false);
     }
 
+    // Starts with input (B button).
     void ToggleView(InputAction.CallbackContext context)
     {
         Toggle();
@@ -43,19 +44,11 @@ public class Views : MonoBehaviour
     {
         foreach(BikePart bikePart in bikeParts)
         {
+            if (!explodedViewActive)
+            {
+                bikePart.ShowName(false);
+            }
             bikePart.TogglePos(explodedViewActive);
-            /*Vector3 newPos = Vector3.zero;
-            if (explodedViewActive)
-            {
-                newPos = bikePart.GetExplodedPos().position;
-            }
-            else
-            {
-                newPos = bikePart.GetInitialPosition().position;
-            }
-            Debug.Log(newPos);
-            bikePart.transform.position = newPos;
-            */
         }
     }
 

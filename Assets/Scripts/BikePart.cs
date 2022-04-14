@@ -17,8 +17,6 @@ public class BikePart : XRBaseInteractable
     TextMeshPro nameDisplay;
     Transform initialTransform;
 
-    bool showName = true;
-
     Vector3 initialPos;
     Vector3 explodedPos;
 
@@ -33,14 +31,14 @@ public class BikePart : XRBaseInteractable
         nameDisplay = nameField.GetComponent<TextMeshPro>();
         explodedView = FindObjectOfType<ExplodedView>();
         nameDisplay.text = partName;
-        
     }
 
+    // Function called by On Hover Enter event.
     public void DisplayInfo()
     {
         if (views.explodedViewActive)
         {
-            HighlightPart();
+            HighlightPart(true);
             explodedView.NameField.text = partName;
             explodedView.DescriptionField.text = description;
             ShowName(true);
@@ -48,59 +46,45 @@ public class BikePart : XRBaseInteractable
         }
     }
 
+    // Function called by On Hover Exit event.
     public void HideInfo()
     {
         if (views.explodedViewActive)
         {
-            UnhighlightPart();
+            HighlightPart(false);
             explodedView.InfoCanvas.SetActive(false);
-            
-            ShowName(showName);
+            ShowName(false);
         }    
     }
 
-    private void HighlightPart()
+    private void HighlightPart(bool highlight)
     {
-        meshRenderer.material.color = Color.red;
-    }
-
-    private void UnhighlightPart()
-    {
-        meshRenderer.material.color = Color.white;
+        Color newColor = Color.green;
+        if (highlight)
+        {
+            newColor = Color.red;
+        }
+        else
+        {
+            newColor = Color.white;
+        }
+        meshRenderer.material.color = newColor;
     }
 
     public void ShowName(bool show)
     {
-        if (views.explodedViewActive)
-        {
-            nameField.DisplayName(show);
-        }
-    }
-
-    public void SetShowName(bool show)
-    {
-        showName = show;
-    }
-
-    public Transform GetInitialPosition()
-    {
-        return initialTransform;
-    }
-
-    public Transform GetExplodedPos()
-    {
-        return explodedTransform;
+        nameField.DisplayName(show);
     }
 
     public void TogglePos(bool explodedView)
     {
-        if(explodedView)
+        if(explodedView == true)
         {
             transform.position = explodedTransform.position;
         }
         else
         {
-
+            ShowName(false);
             transform.position = initialPos;
         }
     }

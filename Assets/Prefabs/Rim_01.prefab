@@ -132,7 +132,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7447334108427048408}
         m_TargetAssemblyTypeName: BikePart, Assembly-CSharp
-        m_MethodName: DisplayInfo
+        m_MethodName: HideInfo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

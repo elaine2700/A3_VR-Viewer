@@ -4,7 +4,6 @@ using TMPro;
 public class Names : MonoBehaviour
 {
     TextMeshPro nameField;
-    BikePart bikePart;
 
     private void Start()
     {
@@ -14,7 +13,6 @@ public class Names : MonoBehaviour
 
     public void DisplayName(bool show)
     {
-        Debug.Log(show);
         nameField.enabled = show;
     }
 }
