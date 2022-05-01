@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class Move2 : MonoBehaviour
 {
-    public Transform target;
+    public Transform cuberosa;
     private Vector3 initialOffset;
     private Vector3 actualoffset;
     private float xposition;
-    private float speed = 2;
+    private float speed = 2f;
     float initialOffsetx;
     private void Start()
     {
-        initialOffset = target.position - transform.position;
+        initialOffset = cuberosa.position - transform.position;
         Debug.Log(initialOffset);
         actualoffset = initialOffset;
         xposition = transform.localPosition.x;
-        initialOffsetx = target.position.x - transform.position.x;
+        initialOffsetx = cuberosa.position.x - transform.position.x;
     }
 
     private void Update()
     {
-        target.position = transform.position + actualoffset;
+        cuberosa.position = transform.position + actualoffset;
         actualoffset.y = initialOffset.y;
         actualoffset.z = initialOffset.z;
 
@@ -30,8 +30,6 @@ public class Move2 : MonoBehaviour
             Approach2();
             Debug.Log("I am approaching");
         }
-
-
     }
 
     private void Approach2()

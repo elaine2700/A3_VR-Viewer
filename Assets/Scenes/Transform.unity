@@ -1091,7 +1091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d969e246ae8d6c4f8bcfdf1db98fee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 2030573753}
+  cuberosa: {fileID: 2030573753}
 --- !u!65 &558771572
 BoxCollider:
   m_ObjectHideFlags: 0

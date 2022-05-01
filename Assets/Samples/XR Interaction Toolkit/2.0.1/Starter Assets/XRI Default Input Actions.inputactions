@@ -1153,8 +1153,8 @@
                 },
                 {
                     "name": "",
-                    "id": "93f7a21d-4a61-4e3a-ab22-e15df54b5c43",
-                    "path": "<Keyboard>/d",
+                    "id": "795d3316-106a-4d3c-80c9-6a4e575f6199",
+                    "path": "*/{MenuButton}",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1164,8 +1164,8 @@
                 },
                 {
                     "name": "",
-                    "id": "795d3316-106a-4d3c-80c9-6a4e575f6199",
-                    "path": "<XRController>{LeftHand}/gripButton",
+                    "id": "93f7a21d-4a61-4e3a-ab22-e15df54b5c43",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
