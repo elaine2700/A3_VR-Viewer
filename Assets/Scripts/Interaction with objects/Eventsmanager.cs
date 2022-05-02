@@ -112,8 +112,8 @@ public class Eventsmanager : MonoBehaviour
     {
         if (OnHoverexitright != null)
         {
-            OnHoverexitright(name);
             canhoverright = true;
+            OnHoverexitright(name);
         }
     }
     public event Action<string> OnHoverexitleft;
@@ -121,8 +121,8 @@ public class Eventsmanager : MonoBehaviour
     {
         if (OnHoverexitleft != null)
         {
-            OnHoverexitleft(name);
             canhoverleft = true;
+            OnHoverexitleft(name);
         }
     }
 }

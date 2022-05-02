@@ -10,7 +10,6 @@ public class Moveobjects : MonoBehaviour
     public Transform controllerright;
 
     //Get raycast info from both controllers
-
     private bool isHoverleft;
     private bool isHoverright;
 
@@ -21,6 +20,7 @@ public class Moveobjects : MonoBehaviour
     private float speed = .00001f;
     private float initialOffsetz;
     private float positionz;
+    private bool iamapproaching = false;
 
     //For Scale
     private bool getinitialscaleonce = false;
@@ -43,6 +43,8 @@ public class Moveobjects : MonoBehaviour
 
     public void Start()
     {
+        //Subscribe to chanels when pressing inputs from control or when an object is being hovered left or right.
+        //When the event happens deoending on what channel they are subscribed, this functions (brown) will be fired.
         name = objectref.name;
         Eventsmanager.current.OnTriggerRightTrue += ApproachRight;
         Eventsmanager.current.OnTriggerRightFalse += Triggerrightfalse;
@@ -63,30 +65,31 @@ public class Moveobjects : MonoBehaviour
 
     private void Triggerrightfalse()
     {
-            triggersright = false;
+        triggersright = false;
     }
     private void Triggerleftfalse()
     {
-            triggersleft = false;
+        triggersleft = false;
     }
     private void Griprighttrue()
     {
-            gripright = true;
+        gripright = true;
     }
     private void Griplefttrue()
     {
-            gripleft = true;
+        gripleft = true;
     }
     private void Griprightfalse()
     {
-            gripright = false;
+        gripright = false;
     }
     private void Gripleftfalse()
     {
-            gripleft = false;
+        gripleft = false;
     }
     public void Getinitialoffsetright(string name)
     {
+        //This prevented all objects with the same code to activate all at a time by checking the name, if one object is being hovered, you can´t hover another one.
         if (name == this.name && Eventsmanager.canhoverright)
         {
             isHoverright = true;
@@ -128,57 +131,63 @@ public class Moveobjects : MonoBehaviour
     }
     private void ApproachRight()
     {
-            triggersright = true;
-            if (isHoverright && !iamscaling)
-            {
-                transform.position = controllerright.position + actualOffset;
-                actualOffset.x = initialOffset.x;
-                actualOffset.y = initialOffset.y;
+        triggersright = true;
+        if (isHoverright && !iamscaling)
+        {
+            iamapproaching = true;
+            transform.position = controllerright.position + actualOffset;
+            actualOffset.x = initialOffset.x;
+            actualOffset.y = initialOffset.y;
 
-                if (positionz != controllerright.localPosition.z)
-                {
-                    actualOffset.z = initialOffsetz * positionz / controllerright.localPosition.z * speed * Time.deltaTime;
-                }
+            if (positionz != controllerright.localPosition.z)
+            {
+                actualOffset.z = initialOffsetz * positionz / controllerright.localPosition.z * speed * Time.deltaTime;
             }
+        }
+        else
+            iamapproaching = false;
     }
     private void ApproachLeft()
     {
-            triggersleft = true;
-            if (isHoverleft && !iamscaling)
-            {
-                transform.position = controllerLeft.position + actualOffset;
-                actualOffset.x = initialOffset.x;
-                actualOffset.y = initialOffset.y;
+        triggersleft = true;
+        if (isHoverleft && !iamscaling)
+        {
+            iamapproaching = true;
+            transform.position = controllerLeft.position + actualOffset;
+            actualOffset.x = initialOffset.x;
+            actualOffset.y = initialOffset.y;
 
-                if (positionz != controllerLeft.localPosition.z)
-                {
-                    actualOffset.z = initialOffsetz * positionz / controllerLeft.localPosition.z * speed * Time.deltaTime;
-                }
+            if (positionz != controllerLeft.localPosition.z)
+            {
+                actualOffset.z = initialOffsetz * positionz / controllerLeft.localPosition.z * speed * Time.deltaTime;
             }
+        }
+        else
+            iamapproaching = false;
     }
     private void Scale()
     {
-            if (isHoverright && getinitialscaleonce || isHoverleft && getinitialscaleonce)
-            {
-                initialScale = objectref.transform.localScale;
-                initialDistance = Vector3.Distance(controllerLeft.position, controllerright.position);
-                getinitialscaleonce = false;
-            }
-            if (isHoverright && isHoverleft && !getinitialscaleonce)
-            {
-                Eventsmanager.current.Scaling();
-            }
-            if (triggersright && triggersleft && !getinitialscaleonce)
-            {
-                float currentDistance = Vector3.Distance(controllerright.position, controllerLeft.position);
-                result = currentDistance / initialDistance;
-                objectref.transform.localScale = initialScale * result;
-            }
-            if (!triggersright && !triggersleft)
-            {
-                getinitialscaleonce = true;
-                iamscaling = false;
-            }
+        if (isHoverright && getinitialscaleonce || isHoverleft && getinitialscaleonce)
+        {
+            initialScale = objectref.transform.localScale;
+            initialDistance = Vector3.Distance(controllerLeft.position, controllerright.position);
+            getinitialscaleonce = false;
+        }
+        if (isHoverright && isHoverleft && !getinitialscaleonce)
+        {
+            Eventsmanager.current.Scaling();
+        }
+        if (triggersright && triggersleft && !getinitialscaleonce)
+        {
+            float currentDistance = Vector3.Distance(controllerright.position, controllerLeft.position);
+            result = currentDistance / initialDistance;
+            objectref.transform.localScale = initialScale * result;
+        }
+        if (!triggersright && !triggersleft)
+        {
+            getinitialscaleonce = true;
+            iamscaling = false;
+        }
     }
     public void SetScaletrue()
     {
@@ -216,7 +225,7 @@ public class Moveobjects : MonoBehaviour
         Scale();
         Rotation();
         Debug.Log($"Object: {objectref} |Hovering left = {isHoverleft} | Hovering right = {isHoverright}");
-        if (iamscaling || iamrotating)
+        if (iamscaling || iamrotating || iamapproaching)
         {
             Eventsmanager.canhoverleft = false;
             Eventsmanager.canhoverright = false;

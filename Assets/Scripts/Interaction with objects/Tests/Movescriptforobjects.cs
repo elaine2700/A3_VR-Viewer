@@ -16,7 +16,7 @@ public class Movescriptforobjects : MonoBehaviour
 
 
     public InputDeviceCharacteristics characteristicsright;
-    private InputDevice targetdeviceriaght;
+    private InputDevice targetdeviceright;
 
     private bool ishoverRight= true;
 
@@ -32,7 +32,7 @@ public class Movescriptforobjects : MonoBehaviour
 
         if (devices.Count > 0)
         {
-            targetdeviceriaght = devices[0];
+            targetdeviceright = devices[0];
         }
     }
 
@@ -49,7 +49,7 @@ public class Movescriptforobjects : MonoBehaviour
     public void Update()
     {
         bool triggerButtonaction = false;
-        if (targetdeviceriaght.TryGetFeatureValue(CommonUsages.triggerButton, out triggerButtonaction) && triggerButtonaction && ishoverRight)
+        if (targetdeviceright.TryGetFeatureValue(CommonUsages.triggerButton, out triggerButtonaction) && triggerButtonaction && ishoverRight)
         {
             Debug.Log($"You pressed trigger");
 
