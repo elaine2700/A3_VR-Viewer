@@ -8,8 +8,6 @@ public class Eventsmanager : MonoBehaviour
     public static Eventsmanager current;
     public static bool canhoverright;
     public static bool canhoverleft;
-
-
     private void Awake()
     {
         current = this;

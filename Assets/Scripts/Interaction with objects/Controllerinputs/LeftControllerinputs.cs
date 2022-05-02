@@ -13,7 +13,6 @@ public class LeftControllerinputs : MonoBehaviour
     {
         List<InputDevice> devices = new List<InputDevice>();
         InputDevices.GetDevicesWithCharacteristics(characteristicsleft, devices);
-       
 
         foreach (var item in devices)
         {
@@ -28,6 +27,7 @@ public class LeftControllerinputs : MonoBehaviour
 
     void Update()
     {
+
         bool triggerButtonaction = false;
         
         if (targetdeviceleft.TryGetFeatureValue(CommonUsages.triggerButton, out triggerButtonaction) && triggerButtonaction)

@@ -4,10 +4,9 @@ using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR;
 public class RightControllerinputs : MonoBehaviour
 {
+
     public InputDeviceCharacteristics characteristicsright;
     private InputDevice targetdeviceright;
-    
-
     void Start()
     {
         List<InputDevice> devices = new List<InputDevice>();

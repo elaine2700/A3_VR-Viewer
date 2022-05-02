@@ -20,7 +20,9 @@ public class Moveobjects : MonoBehaviour
     private float speed = .00001f;
     private float initialOffsetz;
     private float positionz;
-    private bool iamapproaching = false;
+    private bool iamapproachingright = false;
+    private bool iamapproachingleft = false;
+
 
     //For Scale
     private bool getinitialscaleonce = false;
@@ -134,7 +136,7 @@ public class Moveobjects : MonoBehaviour
         triggersright = true;
         if (isHoverright && !iamscaling)
         {
-            iamapproaching = true;
+            iamapproachingright = true;
             transform.position = controllerright.position + actualOffset;
             actualOffset.x = initialOffset.x;
             actualOffset.y = initialOffset.y;
@@ -145,14 +147,14 @@ public class Moveobjects : MonoBehaviour
             }
         }
         else
-            iamapproaching = false;
+            iamapproachingright = false;
     }
     private void ApproachLeft()
     {
         triggersleft = true;
         if (isHoverleft && !iamscaling)
         {
-            iamapproaching = true;
+            iamapproachingleft = true;
             transform.position = controllerLeft.position + actualOffset;
             actualOffset.x = initialOffset.x;
             actualOffset.y = initialOffset.y;
@@ -163,7 +165,7 @@ public class Moveobjects : MonoBehaviour
             }
         }
         else
-            iamapproaching = false;
+            iamapproachingleft = false;
     }
     private void Scale()
     {
@@ -225,7 +227,7 @@ public class Moveobjects : MonoBehaviour
         Scale();
         Rotation();
         Debug.Log($"Object: {objectref} |Hovering left = {isHoverleft} | Hovering right = {isHoverright}");
-        if (iamscaling || iamrotating || iamapproaching)
+        if (iamscaling || iamrotating || iamapproachingright || iamapproachingleft)
         {
             Eventsmanager.canhoverleft = false;
             Eventsmanager.canhoverright = false;
