@@ -16,7 +16,7 @@ public class CustomInteractions : MonoBehaviour
         interactable.hoverExited.AddListener(Sethoverfalse);
         name = nameobject.name;
     }
-
+    //These custom interactions allowed to know separately if an object was being hiver by right or left raycast, was a very "functional" function jajja.
     private void Sethovertrue(HoverEnterEventArgs args)
     {
         bool hitboolright = false;

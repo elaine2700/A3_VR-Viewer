@@ -13,6 +13,8 @@ public class Eventsmanager : MonoBehaviour
         current = this;
     }
     //Learned events and use this method https://www.youtube.com/watch?v=gx0Lt4tCDE0
+    //This class receives the call when a specific event happens and it will notify to its subscribers.
+    //When trigger is being pressed
     public event Action OnTriggerLeftTrue;
     public void TriggerLeftTrue()
     {
@@ -29,6 +31,7 @@ public class Eventsmanager : MonoBehaviour
             OnTriggerLeftFalse();
         }
     }
+    //When grip is being pressed
     public event Action OnGripLeftTrue;
     public void GripLeftTrue()
     {
@@ -78,6 +81,7 @@ public class Eventsmanager : MonoBehaviour
             OnGripRightFalse();
         }
     }
+    //When an object is scaling
     public event Action OnScaling;
     public void Scaling()
     {
@@ -86,6 +90,8 @@ public class Eventsmanager : MonoBehaviour
             OnScaling();
         }
     }
+    //I used a string so to prevent all objects from moving a t the same time.
+    //If something is being hovered,no objects can be added.
     public event Action<string> OnHoverright;
     public void Hoverright(string name)
     {

@@ -17,7 +17,7 @@ public class Moveobjects : MonoBehaviour
     private Vector3 initialOffset;
     private Vector3 actualOffset;
     private float cubepositionofz;
-    private float speed = .00001f;
+    private float speed = .01f;
     private float initialOffsetz;
     private float positionz;
     private bool iamapproachingright = false;
@@ -91,19 +91,21 @@ public class Moveobjects : MonoBehaviour
     }
     public void Getinitialoffsetright(string name)
     {
-        //This prevented all objects with the same code to activate all at a time by checking the name, if one object is being hovered, you can´t hover another one.
+        //This prevents all objects with the same code to activate all at a time by checking the name, if one object is being hovered, you can´t hover another one.
         if (name == this.name && Eventsmanager.canhoverright)
         {
             isHoverright = true;
             //Debug.Log($"isHoverright on {objectref.name} should be true: {isHoverright}");
             initialOffset = transform.position - controllerright.position;
             actualOffset = initialOffset;
+            //Gets the initial difference between the control and the hovered object over z axis
             initialOffsetz = transform.position.z - controllerright.position.z;
-            positionz = controllerright.localPosition.z;
+            positionz = controllerright.position.z;
         }
     }
     public void Getinitialoffsetleft(string name)
     {
+        //Same but with Right controller
         if (name == this.name && Eventsmanager.canhoverleft)
         {
             isHoverleft = true;
@@ -117,6 +119,7 @@ public class Moveobjects : MonoBehaviour
     }
     public void SethoverfalseLeft(string name)
     {
+        //I should have used a bool to avoid repetition
         if (name == this.name)
         {
             isHoverleft = false;
@@ -131,19 +134,26 @@ public class Moveobjects : MonoBehaviour
             //Debug.Log($"isHoverright on {objectref.name} should be false: {isHoverright}");
         }
     }
+    //This funstions awares the hole class that trigger right controler is true
+    //A sad problem with our move, was that it has to hover specifically the object the user decides, it must be a possible solution for this, but we didn´t have time to solve it.
     private void ApproachRight()
     {
+        //A problem with our movement action, is that we have to hover the object everytime we want to move the object so it is not UX friendly
         triggersright = true;
+        //If trigger and the object is being hovered and the object is not being scaled, approach the object near me.
         if (isHoverright && !iamscaling)
         {
+            //Awares that approaching action is happening
             iamapproachingright = true;
+            //Position of the object will be the position of the control + the initial offset
             transform.position = controllerright.position + actualOffset;
+            //X & y remain the same
             actualOffset.x = initialOffset.x;
             actualOffset.y = initialOffset.y;
-
-            if (positionz != controllerright.localPosition.z)
+            //We really didn´t see a big difference with z, the objective was to approach the object faster
+            if (positionz != controllerright.position.z)
             {
-                actualOffset.z = initialOffsetz * positionz / controllerright.localPosition.z * speed * Time.deltaTime;
+                actualOffset.z = initialOffsetz * positionz / controllerright.position.z * speed * Time.deltaTime;
             }
         }
         else
@@ -151,6 +161,7 @@ public class Moveobjects : MonoBehaviour
     }
     private void ApproachLeft()
     {
+        //Same as right, but with left
         triggersleft = true;
         if (isHoverleft && !iamscaling)
         {
@@ -171,6 +182,7 @@ public class Moveobjects : MonoBehaviour
     {
         if (isHoverright && getinitialscaleonce || isHoverleft && getinitialscaleonce)
         {
+            //Gets the initial offset once
             initialScale = objectref.transform.localScale;
             initialDistance = Vector3.Distance(controllerLeft.position, controllerright.position);
             getinitialscaleonce = false;
@@ -181,12 +193,15 @@ public class Moveobjects : MonoBehaviour
         }
         if (triggersright && triggersleft && !getinitialscaleonce)
         {
+            //If getinitialscaleonce is false, then the action of scaling is implemented.
+            //This function was stolen from Erik´s class.
             float currentDistance = Vector3.Distance(controllerright.position, controllerLeft.position);
             result = currentDistance / initialDistance;
             objectref.transform.localScale = initialScale * result;
         }
         if (!triggersright && !triggersleft)
         {
+            //If triiger is not being pressed by both controllers, then it cancels the action of scaling and resets the offset.
             getinitialscaleonce = true;
             iamscaling = false;
         }
@@ -198,6 +213,7 @@ public class Moveobjects : MonoBehaviour
 
     private void Rotation()
     {
+        //It is basically the same concept with scaling but instead of trigger are both grip buttons pressed and the object will start rotationg.
         if (isHoverright && getinitialrotationonce || isHoverleft && getinitialrotationonce)
         {
             initialrotationofobject = objectref.transform.localRotation.eulerAngles;
@@ -206,11 +222,12 @@ public class Moveobjects : MonoBehaviour
         if (gripright && gripleft && !getinitialrotationonce)
         {
             iamrotating = true;
+            //Gets local roation of target 2 and converts it to euler (Vector3)
             localrotationoffsettarget2 = target2.rotation.eulerAngles;
             //Debug.Log($"local Rotation x axis  of target2 is {localrotationoffsettarget2}");
-
+            //Sets y rotation based on target rotation * 2
             objectref.transform.localRotation = Quaternion.Euler(initialrotationofobject.x, localrotationoffsettarget2.y * 2, initialrotationofobject.z);
-
+            //This is an object that is positioned between both controllers and the rotation depends on the movement of the controls.
             target2.position = (controllerLeft.position + controllerright.position) / 2;
             target2.rotation = Quaternion.LookRotation(controllerLeft.position - controllerright.position, Vector3.up);
 
@@ -224,9 +241,11 @@ public class Moveobjects : MonoBehaviour
     }
     private void Update()
     {
+        //Scale and rotation are always being called
         Scale();
         Rotation();
         Debug.Log($"Object: {objectref} |Hovering left = {isHoverleft} | Hovering right = {isHoverright}");
+        //This prevents to activate other objects while one is already hovered.
         if (iamscaling || iamrotating || iamapproachingright || iamapproachingleft)
         {
             Eventsmanager.canhoverleft = false;

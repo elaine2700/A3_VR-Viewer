@@ -6,6 +6,7 @@ using UnityEngine.XR;
 
 public class LeftControllerinputs : MonoBehaviour
 {
+    //Same as Right controller
     public InputDeviceCharacteristics characteristicsleft;
     private InputDevice targetdeviceleft;
 
